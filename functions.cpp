@@ -9,8 +9,8 @@
 using namespace std;
 
 void input(string task) {
-    vector <string> possible = { "СТОП", "1", "2", "3", "4", "5", "6", "7", "8"};
-    string error = " является некорректным значением запроса.";
+    vector <string> possible = { "РЎРўРћРџ", "1", "2", "3", "4", "5", "6", "7", "8"};
+    string error = " СЏРІР»СЏРµС‚СЃСЏ РЅРµРєРѕСЂСЂРµРєС‚РЅС‹Рј Р·РЅР°С‡РµРЅРёРµРј Р·Р°РїСЂРѕСЃР°.";
     bool is_possible = false;
     for (int i = 0; i < 9; i++) {
         if (task == possible[i]) {
@@ -23,22 +23,22 @@ void input(string task) {
 }
 
 int enumerate_species(string str) {
-    if (str == "кот") {
+    if (str == "РєРѕС‚") {
         return 0;
     }
-    if (str == "собака") {
+    if (str == "СЃРѕР±Р°РєР°") {
         return 1;
     }
-    if (str == "попугай") {
+    if (str == "РїРѕРїСѓРіР°Р№") {
         return 2;
     }
-    if (str == "хомяк") {
+    if (str == "С…РѕРјСЏРє") {
         return 3;
     }
 }
 
 string denumerate_species(int number) {
-    vector <string> species_vec = { "кот", "собака", "попугай", "хомяк" };
+    vector <string> species_vec = { "РєРѕС‚", "СЃРѕР±Р°РєР°", "РїРѕРїСѓРіР°Р№", "С…РѕРјСЏРє" };
     return species_vec[number];
 }
 
@@ -74,18 +74,18 @@ void set_pet_to_owner(string line, vector<Owner>& owners) {
 
 }
 
-//1. Посчитать количество различных видов животных у каждого владельца.
+//1. РџРѕСЃС‡РёС‚Р°С‚СЊ РєРѕР»РёС‡РµСЃС‚РІРѕ СЂР°Р·Р»РёС‡РЅС‹С… РІРёРґРѕРІ Р¶РёРІРѕС‚РЅС‹С… Сѓ РєР°Р¶РґРѕРіРѕ РІР»Р°РґРµР»СЊС†Р°.
 void task_1(vector<Owner>& owners) {
     for (int i = 0; i < owners.size(); i++) {
-        cout << "У владельца по имени " << owners[i].get_name() << " " << owners[i].get_num_of_species() << " различных видов животных." << endl;
+        cout << "РЈ РІР»Р°РґРµР»СЊС†Р° РїРѕ РёРјРµРЅРё " << owners[i].get_name() << " " << owners[i].get_num_of_species() << " СЂР°Р·Р»РёС‡РЅС‹С… РІРёРґРѕРІ Р¶РёРІРѕС‚РЅС‹С…." << endl;
     }
 };
 
 
-//2. Для конкретного вида животного, вводимого Вами, вывести всех 
-//его владельцев и клички. Владельцы и клички не будут повторяться.
+//2. Р”Р»СЏ РєРѕРЅРєСЂРµС‚РЅРѕРіРѕ РІРёРґР° Р¶РёРІРѕС‚РЅРѕРіРѕ, РІРІРѕРґРёРјРѕРіРѕ Р’Р°РјРё, РІС‹РІРµСЃС‚Рё РІСЃРµС… 
+//РµРіРѕ РІР»Р°РґРµР»СЊС†РµРІ Рё РєР»РёС‡РєРё. Р’Р»Р°РґРµР»СЊС†С‹ Рё РєР»РёС‡РєРё РЅРµ Р±СѓРґСѓС‚ РїРѕРІС‚РѕСЂСЏС‚СЊСЃСЏ.
 void task_2(vector<Owner>& owners, string info) {
-    //    info = "кот";
+    //    info = "РєРѕС‚";
     set<string> names;
     set<string> species_owners;
     for (int i = 0; i < owners.size(); i++) {
@@ -97,12 +97,12 @@ void task_2(vector<Owner>& owners, string info) {
         }
     }
     set<string>::iterator it;
-    cout << "Клички всех животных этого вида: ";
+    cout << "РљР»РёС‡РєРё РІСЃРµС… Р¶РёРІРѕС‚РЅС‹С… СЌС‚РѕРіРѕ РІРёРґР°: ";
     for (it = names.begin(); it != names.end(); it++) {
         cout << (*it) << " ";
     }
     cout << endl;
-    cout << "Имена всех владельцев у которых есть " << info << ": ";
+    cout << "РРјРµРЅР° РІСЃРµС… РІР»Р°РґРµР»СЊС†РµРІ Сѓ РєРѕС‚РѕСЂС‹С… РµСЃС‚СЊ " << info << ": ";
     for (it = species_owners.begin(); it != species_owners.end(); it++) {
         cout << (*it) << "   ";
     }
@@ -110,9 +110,9 @@ void task_2(vector<Owner>& owners, string info) {
 }
 
 
-// 3. Определить, сколько видов животных носит введённую Вами кличку.
+// 3. РћРїСЂРµРґРµР»РёС‚СЊ, СЃРєРѕР»СЊРєРѕ РІРёРґРѕРІ Р¶РёРІРѕС‚РЅС‹С… РЅРѕСЃРёС‚ РІРІРµРґС‘РЅРЅСѓСЋ Р’Р°РјРё РєР»РёС‡РєСѓ.
 void task_3(vector<Owner>& owners, string info) {
-    //    info = "Джуля";
+    //    info = "Р”Р¶СѓР»СЏ";
     vector <bool> spcs = { 0, 0, 0, 0 };
     for (int i = 0; i < owners.size(); i++) {
         for (int j = 0; j < owners[i].get_pets().size(); j++) {
@@ -122,12 +122,12 @@ void task_3(vector<Owner>& owners, string info) {
         }
     }
     int num = spcs[0] + spcs[1] + spcs[2] + spcs[3];
-    cout << num << " видов животных носит введённую Вами кличку." << endl;
+    cout << num << " РІРёРґРѕРІ Р¶РёРІРѕС‚РЅС‹С… РЅРѕСЃРёС‚ РІРІРµРґС‘РЅРЅСѓСЋ Р’Р°РјРё РєР»РёС‡РєСѓ." << endl;
 };
 
 
-//4. Вывести информацию о возрасте самого старого и самого молодого 
-// животного каждого вида
+//4. Р’С‹РІРµСЃС‚Рё РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ РІРѕР·СЂР°СЃС‚Рµ СЃР°РјРѕРіРѕ СЃС‚Р°СЂРѕРіРѕ Рё СЃР°РјРѕРіРѕ РјРѕР»РѕРґРѕРіРѕ 
+// Р¶РёРІРѕС‚РЅРѕРіРѕ РєР°Р¶РґРѕРіРѕ РІРёРґР°
 void task_4(vector<Owner>& owners) {
     vector <vector<int>> ages = { {0, 1000},{0, 1000},{0, 1000},{0, 1000} };
     int age = 0;
@@ -143,17 +143,17 @@ void task_4(vector<Owner>& owners) {
         }
     }
     for (int i = 0; i < 4; i++) {
-        cout << "Возраст самого старого животного вида " << denumerate_species(i) << " равен " << ages[i][0] << " лет." << endl;
-        cout << "Возраст самого молодого животного вида " << denumerate_species(i) << " равен " << ages[i][1] << " лет." << endl;
+        cout << "Р’РѕР·СЂР°СЃС‚ СЃР°РјРѕРіРѕ СЃС‚Р°СЂРѕРіРѕ Р¶РёРІРѕС‚РЅРѕРіРѕ РІРёРґР° " << denumerate_species(i) << " СЂР°РІРµРЅ " << ages[i][0] << " Р»РµС‚." << endl;
+        cout << "Р’РѕР·СЂР°СЃС‚ СЃР°РјРѕРіРѕ РјРѕР»РѕРґРѕРіРѕ Р¶РёРІРѕС‚РЅРѕРіРѕ РІРёРґР° " << denumerate_species(i) << " СЂР°РІРµРЅ " << ages[i][1] << " Р»РµС‚." << endl;
     }
 };
 
 void task_5(vector<Owner>& owners, string info) {
-    //    info = "Иванов Иван Иванович";
+    //    info = "РРІР°РЅРѕРІ РРІР°РЅ РРІР°РЅРѕРІРёС‡";
     for (int i = 0; i < owners.size(); i++) {
         if (owners[i].get_name() == info) {
             for (int j = 0; j < owners[i].get_pets().size(); j++) {
-                cout << "Информация о питомце по имени " << owners[i].get_pets()[j]->get_pet_name() << ":" << endl;
+                cout << "РРЅС„РѕСЂРјР°С†РёСЏ Рѕ РїРёС‚РѕРјС†Рµ РїРѕ РёРјРµРЅРё " << owners[i].get_pets()[j]->get_pet_name() << ":" << endl;
                 owners[i].get_pets()[j]->get_features();
                 cout << endl;
             }
@@ -164,16 +164,16 @@ void task_5(vector<Owner>& owners, string info) {
 
 
 void task_6(vector<Owner>& owners) {
-    Cat cat("новый котик", 8);
-    cout << "Данные о последнем животном - id: " << cat.get_id() << ", кличка: " << cat.get_pet_name() << ", возраст: " << cat.get_age() << endl;
+    Cat cat("РЅРѕРІС‹Р№ РєРѕС‚РёРє", 8);
+    cout << "Р”Р°РЅРЅС‹Рµ Рѕ РїРѕСЃР»РµРґРЅРµРј Р¶РёРІРѕС‚РЅРѕРј - id: " << cat.get_id() << ", РєР»РёС‡РєР°: " << cat.get_pet_name() << ", РІРѕР·СЂР°СЃС‚: " << cat.get_age() << endl;
     Cat new_cat(move(cat));
-    cout << "Данные о новом животном - id: " << new_cat.get_id() << ", кличка: " << new_cat.get_pet_name() << ", возраст: " << new_cat.get_age() << endl;
-    cout << "Данные о прошлом последнем животном - id: " << cat.get_id() << ", кличка: " << cat.get_pet_name() << ", возраст: " << cat.get_age() << endl;
-    Cat cat2("ещё новый котёнок", 2);
-    cout << "Данные о последнем животном - id: " << cat2.get_id() << ", кличка: " << cat2.get_pet_name() << ", возраст: " << cat2.get_age() << endl;
+    cout << "Р”Р°РЅРЅС‹Рµ Рѕ РЅРѕРІРѕРј Р¶РёРІРѕС‚РЅРѕРј - id: " << new_cat.get_id() << ", РєР»РёС‡РєР°: " << new_cat.get_pet_name() << ", РІРѕР·СЂР°СЃС‚: " << new_cat.get_age() << endl;
+    cout << "Р”Р°РЅРЅС‹Рµ Рѕ РїСЂРѕС€Р»РѕРј РїРѕСЃР»РµРґРЅРµРј Р¶РёРІРѕС‚РЅРѕРј - id: " << cat.get_id() << ", РєР»РёС‡РєР°: " << cat.get_pet_name() << ", РІРѕР·СЂР°СЃС‚: " << cat.get_age() << endl;
+    Cat cat2("РµС‰С‘ РЅРѕРІС‹Р№ РєРѕС‚С‘РЅРѕРє", 2);
+    cout << "Р”Р°РЅРЅС‹Рµ Рѕ РїРѕСЃР»РµРґРЅРµРј Р¶РёРІРѕС‚РЅРѕРј - id: " << cat2.get_id() << ", РєР»РёС‡РєР°: " << cat2.get_pet_name() << ", РІРѕР·СЂР°СЃС‚: " << cat2.get_age() << endl;
     Cat new_cat2 = move(cat2);
-    cout << "Данные о новом животном - id: " << new_cat2.get_id() << ", кличка: " << new_cat2.get_pet_name() << ", возраст: " << new_cat2.get_age() << endl;
-    cout << "Данные о прошлом животном - id: " << cat2.get_id() << ", кличка: " << cat2.get_pet_name() << ", возраст: " << cat2.get_age() << endl;
+    cout << "Р”Р°РЅРЅС‹Рµ Рѕ РЅРѕРІРѕРј Р¶РёРІРѕС‚РЅРѕРј - id: " << new_cat2.get_id() << ", РєР»РёС‡РєР°: " << new_cat2.get_pet_name() << ", РІРѕР·СЂР°СЃС‚: " << new_cat2.get_age() << endl;
+    cout << "Р”Р°РЅРЅС‹Рµ Рѕ РїСЂРѕС€Р»РѕРј Р¶РёРІРѕС‚РЅРѕРј - id: " << cat2.get_id() << ", РєР»РёС‡РєР°: " << cat2.get_pet_name() << ", РІРѕР·СЂР°СЃС‚: " << cat2.get_age() << endl;
 };
 
 
@@ -185,9 +185,9 @@ void task_7() {
     Animal* cat = catFactory->CreateAnimal();
     Animal* dog = dogFactory->CreateAnimal();
     Animal* parrot = parrotFactory->CreateAnimal();
-    cout << "Имя кошки: " << cat->get_pet_name() << endl;
-    cout << "Возраст собаки: " << dog->get_age() << endl;
-    cout << "Id попугая: " << parrot->get_id() << endl;
+    cout << "РРјСЏ РєРѕС€РєРё: " << cat->get_pet_name() << endl;
+    cout << "Р’РѕР·СЂР°СЃС‚ СЃРѕР±Р°РєРё: " << dog->get_age() << endl;
+    cout << "Id РїРѕРїСѓРіР°СЏ: " << parrot->get_id() << endl;
     delete cat;
     delete dog;
     delete parrot;
@@ -220,21 +220,20 @@ void task_8() {
     int NumOfDogs = 0;
     int NumOfParrots = 0;
     int NumOfHamsters = 0;
-    cout << "В нашем городе появится новая сеть ветеринарных клиник. Введите количество новых клиник в этой сети: ";
+    cout << "Р’ РЅР°С€РµРј РіРѕСЂРѕРґРµ РїРѕСЏРІРёС‚СЃСЏ РЅРѕРІР°СЏ СЃРµС‚СЊ РІРµС‚РµСЂРёРЅР°СЂРЅС‹С… РєР»РёРЅРёРє. Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ РЅРѕРІС‹С… РєР»РёРЅРёРє РІ СЌС‚РѕР№ СЃРµС‚Рё: ";
     cin >> NumOfClinics;
-    cout << "Стоимость недели содержания одного кота составляет " << Cat().GetUpkeep() << " рублей, одной собаки " << Dog().GetUpkeep() << " рублей, одного попугая " << Parrot().GetUpkeep() << " рублей, одного хомяка " << Hamster().GetUpkeep() << " рублей." << endl;
-    cout << "Введите количество котов в одной новой клинике: ";
+    cout << "РЎС‚РѕРёРјРѕСЃС‚СЊ РЅРµРґРµР»Рё СЃРѕРґРµСЂР¶Р°РЅРёСЏ РѕРґРЅРѕРіРѕ РєРѕС‚Р° СЃРѕСЃС‚Р°РІР»СЏРµС‚ " << Cat().GetUpkeep() << " СЂСѓР±Р»РµР№, РѕРґРЅРѕР№ СЃРѕР±Р°РєРё " << Dog().GetUpkeep() << " СЂСѓР±Р»РµР№, РѕРґРЅРѕРіРѕ РїРѕРїСѓРіР°СЏ " << Parrot().GetUpkeep() << " СЂСѓР±Р»РµР№, РѕРґРЅРѕРіРѕ С…РѕРјСЏРєР° " << Hamster().GetUpkeep() << " СЂСѓР±Р»РµР№." << endl;
+    cout << "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ РєРѕС‚РѕРІ РІ РѕРґРЅРѕР№ РЅРѕРІРѕР№ РєР»РёРЅРёРєРµ: ";
     cin >> NumOfCats;
-    cout << "Введите количество собак в одной новой клинике: ";
+    cout << "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃРѕР±Р°Рє РІ РѕРґРЅРѕР№ РЅРѕРІРѕР№ РєР»РёРЅРёРєРµ: ";
     cin >> NumOfDogs;
-    cout << "Введите количество попугаев в одной новой клинике: ";
+    cout << "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ РїРѕРїСѓРіР°РµРІ РІ РѕРґРЅРѕР№ РЅРѕРІРѕР№ РєР»РёРЅРёРєРµ: ";
     cin >> NumOfParrots;
-    cout << "Введите количество хомяков в одной новой клинике: ";
+    cout << "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ С…РѕРјСЏРєРѕРІ РІ РѕРґРЅРѕР№ РЅРѕРІРѕР№ РєР»РёРЅРёРєРµ: ";
     cin >> NumOfHamsters;
     for (int i = 0; i < NumOfClinics; i++) {
         ClinicUnion->AddPetClinic(createPetClinic(NumOfCats, NumOfDogs, NumOfParrots, NumOfHamsters));
     }
 
-    cout << "Стоимость содержания новой сети ветеринарных клиник составляет " << ClinicUnion->GetUpkeep() << " рублей в неделю." << endl;
+    cout << "РЎС‚РѕРёРјРѕСЃС‚СЊ СЃРѕРґРµСЂР¶Р°РЅРёСЏ РЅРѕРІРѕР№ СЃРµС‚Рё РІРµС‚РµСЂРёРЅР°СЂРЅС‹С… РєР»РёРЅРёРє СЃРѕСЃС‚Р°РІР»СЏРµС‚ " << ClinicUnion->GetUpkeep() << " СЂСѓР±Р»РµР№ РІ РЅРµРґРµР»СЋ." << endl;
     delete ClinicUnion;
-}
