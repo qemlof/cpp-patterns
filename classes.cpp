@@ -58,16 +58,16 @@ int Owner::get_num_of_species() {
 
 //adding a pet
 void Owner::add_pet(string species, string name, int age) {
-    if (species == "êîò") {
+    if (species == "ĞºĞ¾Ñ‚") {
         this->pets.push_back(new Cat(name, age));
     }
-    else if (species == "ñîáàêà") {
+    else if (species == "ÑĞ¾Ğ±Ğ°ĞºĞ°") {
         this->pets.push_back(new Dog(name, age));
     }
-    else if (species == "ïîïóãàé") {
+    else if (species == "Ğ¿Ğ¾Ğ¿ÑƒĞ³Ğ°Ğ¹") {
         this->pets.push_back(new Parrot(name, age));
     }
-    else if (species == "õîìÿê") {
+    else if (species == "Ñ…Ğ¾Ğ¼ÑĞº") {
         this->pets.push_back(new Hamster(name, age));
     }
 }
