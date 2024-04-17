@@ -10,9 +10,9 @@ protected:
     int pet_id;
     string pet_name;
     int age;
-    const string ab1 = "Первым, чему научился этот питомец, было ";
-    const string ab2 = "Вторым, чему научился этот питомец, было  ";
-    const string ab3 = "Третьим, чему научился этот питомец, было ";
+    const string ab1 = "РџРµСЂРІС‹Рј, С‡РµРјСѓ РЅР°СѓС‡РёР»СЃСЏ СЌС‚РѕС‚ РїРёС‚РѕРјРµС†, Р±С‹Р»Рѕ ";
+    const string ab2 = "Р’С‚РѕСЂС‹Рј, С‡РµРјСѓ РЅР°СѓС‡РёР»СЃСЏ СЌС‚РѕС‚ РїРёС‚РѕРјРµС†, Р±С‹Р»Рѕ  ";
+    const string ab3 = "РўСЂРµС‚СЊРёРј, С‡РµРјСѓ РЅР°СѓС‡РёР»СЃСЏ СЌС‚РѕС‚ РїРёС‚РѕРјРµС†, Р±С‹Р»Рѕ ";
 public:
     Animal() {
         pet_id = ++static_id;
@@ -180,13 +180,13 @@ public:
         return 0;
     }
     void ability_1() override {
-        cout << this->ab1 << "мяукать." << endl;
+        cout << this->ab1 << "РјСЏСѓРєР°С‚СЊ." << endl;
     }
     void ability_2() override {
-        cout << this->ab2 << "лежать на коленях хозяина." << endl;
+        cout << this->ab2 << "Р»РµР¶Р°С‚СЊ РЅР° РєРѕР»РµРЅСЏС… С…РѕР·СЏРёРЅР°." << endl;
     }
     void ability_3() override {
-        cout << this->ab3 << "самостоятельно гулять по улице." << endl;
+        cout << this->ab3 << "СЃР°РјРѕСЃС‚РѕСЏС‚РµР»СЊРЅРѕ РіСѓР»СЏС‚СЊ РїРѕ СѓР»РёС†Рµ." << endl;
     }
 
     virtual int GetUpkeep() {
@@ -227,13 +227,13 @@ public:
         return 1;
     }
     void ability_1() override {
-        cout << this->ab1 << "лаять на незнакомцев." << endl;
+        cout << this->ab1 << "Р»Р°СЏС‚СЊ РЅР° РЅРµР·РЅР°РєРѕРјС†РµРІ." << endl;
     }
     void ability_2() override {
-        cout << this->ab2 << "команда \"Сидеть\"." << endl;
+        cout << this->ab2 << "РєРѕРјР°РЅРґР° \"РЎРёРґРµС‚СЊ\"." << endl;
     }
     void ability_3() override {
-        cout << this->ab3 << "команда \"Дай лапу\"." << endl;
+        cout << this->ab3 << "РєРѕРјР°РЅРґР° \"Р”Р°Р№ Р»Р°РїСѓ\"." << endl;
     }
 
     virtual int GetUpkeep() {
@@ -275,13 +275,13 @@ public:
         return 2;
     }
     void ability_1() override {
-        cout << this->ab1 << "чистить перья." << endl;
+        cout << this->ab1 << "С‡РёСЃС‚РёС‚СЊ РїРµСЂСЊСЏ." << endl;
     }
     void ability_2() override {
-        cout << this->ab2 << "чирикать." << endl;
+        cout << this->ab2 << "С‡РёСЂРёРєР°С‚СЊ." << endl;
     }
     void ability_3() override {
-        cout << this->ab3 << "повторять слова за хозяином." << endl;
+        cout << this->ab3 << "РїРѕРІС‚РѕСЂСЏС‚СЊ СЃР»РѕРІР° Р·Р° С…РѕР·СЏРёРЅРѕРј." << endl;
     }
 
     virtual int GetUpkeep() {
@@ -322,13 +322,13 @@ public:
         return 3;
     }
     void ability_1() override {
-        cout << this->ab1 << "шуршать опилками." << endl;
+        cout << this->ab1 << "С€СѓСЂС€Р°С‚СЊ РѕРїРёР»РєР°РјРё." << endl;
     }
     void ability_2() override {
-        cout << this->ab2 << "прятать еду за щёки." << endl;
+        cout << this->ab2 << "РїСЂСЏС‚Р°С‚СЊ РµРґСѓ Р·Р° С‰С‘РєРё." << endl;
     }
     void ability_3() override {
-        cout << this->ab3 << "бегать в колесе." << endl;
+        cout << this->ab3 << "Р±РµРіР°С‚СЊ РІ РєРѕР»РµСЃРµ." << endl;
     }
 
     virtual int GetUpkeep() {
